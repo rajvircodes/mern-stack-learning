@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout Practice</title>
+    <link rel="stylesheet" href="flexbox-guide.css">
+</head>
+<body>
+    <h1>Flexbox Layout Examples</h1>
+
+    <!-- Navigation Bar Example -->
+    <h2>Navigation Bar</h2>
+    <nav class="navbar">
+        <div class="navbar-logo">MyWebsite</div>
+        <ul class="navbar-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Flex Row Example -->
+    <h2>Flex Row (Items in a row)</h2>
+    <div class="flex-row">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+
+    <!-- Flex Column Example -->
+    <h2>Flex Column (Items in a column)</h2>
+    <div class="flex-column">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+
+    <!-- Justify Content - Space Between -->
+    <h2>Justify Content - Space Between</h2>
+    <div class="justify-between" style="background-color: #f0f0f0; padding: 20px;">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+
+    <!-- Justify Content - Center -->
+    <h2>Justify Content - Center</h2>
+    <div class="justify-center" style="background-color: #f0f0f0; padding: 20px;">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+
+    <!-- Align Items - Center -->
+    <h2>Align Items - Center (Vertical Alignment)</h2>
+    <div class="align-center" style="background-color: #f0f0f0;">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+
+    <!-- Flex Wrap -->
+    <h2>Flex Wrap (Wrap to next line)</h2>
+    <div class="flex-wrap" style="background-color: #f0f0f0; padding: 20px;">
+        <div class="flex-item" style="flex-basis: 200px;">Item 1</div>
+        <div class="flex-item" style="flex-basis: 200px;">Item 2</div>
+        <div class="flex-item" style="flex-basis: 200px;">Item 3</div>
+        <div class="flex-item" style="flex-basis: 200px;">Item 4</div>
+        <div class="flex-item" style="flex-basis: 200px;">Item 5</div>
+    </div>
+
+    <!-- Flex Grow -->
+    <h2>Flex Grow (Items grow to fill space)</h2>
+    <div class="flex-row" style="background-color: #f0f0f0; padding: 20px;">
+        <div class="flex-item flex-grow-1">Grow 1</div>
+        <div class="flex-item flex-grow-2">Grow 2</div>
+        <div class="flex-item flex-grow-1">Grow 1</div>
+    </div>
+
+    <!-- Card Layout -->
+    <h2>Card Layout</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Card 1</h3>
+            <p>This is a card with flexbox layout</p>
+        </div>
+        <div class="card">
+            <h3>Card 2</h3>
+            <p>This is another card</p>
+        </div>
+        <div class="card">
+            <h3>Card 3</h3>
+            <p>Third card example</p>
+        </div>
+    </div>
+
+    <!-- Three Column Layout -->
+    <h2>Three Column Layout</h2>
+    <div class="three-column">
+        <div class="column">
+            <h3>Column 1</h3>
+            <p>First column content</p>
+        </div>
+        <div class="column">
+            <h3>Column 2</h3>
+            <p>Second column content</p>
+        </div>
+        <div class="column">
+            <h3>Column 3</h3>
+            <p>Third column content</p>
+        </div>
+    </div>
+</body>
+</html>

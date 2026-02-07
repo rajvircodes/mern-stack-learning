@@ -1,0 +1,145 @@
+/* Flexbox Layout Guide */
+
+/* Container - Parent element */
+.flex-container {
+    display: flex;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* Basic flex items */
+.flex-item {
+    background-color: #667eea;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Flex direction - row (default) */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/* Flex direction - column */
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Justify content - space between */
+.justify-between {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Justify content - center */
+.justify-center {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Justify content - space around */
+.justify-around {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+/* Align items - center */
+.align-center {
+    display: flex;
+    align-items: center;
+    height: 200px;
+    gap: 10px;
+}
+
+/* Flex wrap */
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Flex grow */
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.flex-grow-2 {
+    flex-grow: 2;
+}
+
+/* Flex shrink */
+.flex-shrink-1 {
+    flex-shrink: 1;
+}
+
+/* Flex basis */
+.flex-basis {
+    flex-basis: 200px;
+}
+
+/* Navigation bar using flexbox */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+    color: white;
+}
+
+.navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Centered card layout */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 250px;
+    text-align: center;
+}
+
+/* Three column layout */
+.three-column {
+    display: flex;
+    gap: 20px;
+}
+
+.three-column .column {
+    flex: 1;
+    background-color: #e8e8e8;
+    padding: 20px;
+    border-radius: 5px;
+}

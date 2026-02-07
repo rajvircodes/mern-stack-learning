@@ -1,0 +1,247 @@
+/* CSS Animations and Transitions */
+
+/* Basic transition */
+.transition-basic {
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.transition-basic:hover {
+    background-color: red;
+}
+
+/* Multiple transitions */
+.transition-multiple {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    transition: width 0.3s, height 0.3s, background-color 0.3s;
+}
+
+.transition-multiple:hover {
+    width: 200px;
+    height: 200px;
+    background-color: orange;
+}
+
+/* Transition timing functions */
+.transition-ease {
+    padding: 10px;
+    transition: all 0.5s ease;
+}
+
+.transition-ease:hover {
+    background-color: lightblue;
+}
+
+.transition-linear {
+    padding: 10px;
+    transition: all 0.5s linear;
+}
+
+.transition-linear:hover {
+    background-color: lightgreen;
+}
+
+.transition-ease-in {
+    padding: 10px;
+    transition: all 0.5s ease-in;
+}
+
+.transition-ease-in:hover {
+    background-color: lightyellow;
+}
+
+.transition-ease-out {
+    padding: 10px;
+    transition: all 0.5s ease-out;
+}
+
+.transition-ease-out:hover {
+    background-color: lightcoral;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in;
+}
+
+/* Slide in animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slideIn 1s ease-out;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.bounce {
+    animation: bounce 1s ease-in-out infinite;
+}
+
+/* Rotate animation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate {
+    animation: rotate 2s linear infinite;
+}
+
+/* Scale animation */
+@keyframes scale {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.5);
+    }
+}
+
+.scale {
+    animation: scale 1s ease-in-out infinite;
+}
+
+/* Color change animation */
+@keyframes colorChange {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: yellow;
+    }
+    50% {
+        background-color: green;
+    }
+    75% {
+        background-color: blue;
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+.color-change {
+    animation: colorChange 4s ease-in-out infinite;
+    padding: 20px;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.pulse {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Glow animation */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+}
+
+.glow {
+    animation: glow 1.5s ease-in-out infinite;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Shake animation */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+/* Button hover animation */
+.button-animate {
+    background-color: #667eea;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-animate:hover {
+    background-color: #764ba2;
+    transform: scale(1.05);
+}
+
+.button-animate:active {
+    transform: scale(0.95);
+}
+
+/* Infinite animation */
+.infinite {
+    animation-iteration-count: infinite;
+}
+
+/* Animation delay */
+.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.delay-2 {
+    animation-delay: 1s;
+}
+
+.delay-3 {
+    animation-delay: 1.5s;
+}

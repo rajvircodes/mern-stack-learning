@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations and Transitions</title>
+    <link rel="stylesheet" href="./css-animations.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-top: 40px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .demo {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Animations and Transitions Examples</h1>
+
+    <!-- Basic Transition -->
+    <h2>Basic Transition</h2>
+    <div class="demo">
+        <p>Hover over the box below to see the color change smoothly:</p>
+        <div class="transition-basic">
+            Hover over me!
+        </div>
+    </div>
+
+    <!-- Multiple Transitions -->
+    <h2>Multiple Transitions</h2>
+    <div class="demo">
+        <p>Hover to see width, height, and color change:</p>
+        <div class="transition-multiple"></div>
+    </div>
+
+    <!-- Transition Timing Functions -->
+    <h2>Transition Timing Functions</h2>
+    <div class="demo">
+        <p>Hover over each box to see different timing effects:</p>
+        <div class="transition-ease" style="background-color: blue; color: white; margin: 10px 0;">Ease (slow-fast-slow)</div>
+        <div class="transition-linear" style="background-color: green; color: white; margin: 10px 0;">Linear (constant speed)</div>
+        <div class="transition-ease-in" style="background-color: orange; color: white; margin: 10px 0;">Ease-in (slow start)</div>
+        <div class="transition-ease-out" style="background-color: red; color: white; margin: 10px 0;">Ease-out (slow end)</div>
+    </div>
+
+    <!-- Fade In Animation -->
+    <h2>Fade In Animation</h2>
+    <div class="demo">
+        <div class="fade-in" style="background-color: #667eea; color: white; padding: 20px; border-radius: 5px;">
+            This element fades in when page loads
+        </div>
+    </div>
+
+    <!-- Slide In Animation -->
+    <h2>Slide In Animation</h2>
+    <div class="demo">
+        <div class="slide-in" style="background-color: #764ba2; color: white; padding: 20px; border-radius: 5px; width: fit-content;">
+            This element slides in from left
+        </div>
+    </div>
+
+    <!-- Bounce Animation -->
+    <h2>Bounce Animation</h2>
+    <div class="demo">
+        <div class="bounce" style="background-color: #f39c12; color: white; padding: 20px; border-radius: 5px; width: fit-content;">
+            Bounce!
+        </div>
+    </div>
+
+    <!-- Rotate Animation -->
+    <h2>Rotate Animation</h2>
+    <div class="demo">
+        <div class="rotate" style="background-color: #e74c3c; color: white; padding: 30px; border-radius: 5px; width: 100px; text-align: center; display: flex; align-items: center; justify-content: center;">
+            ↻
+        </div>
+    </div>
+
+    <!-- Scale Animation -->
+    <h2>Scale Animation</h2>
+    <div class="demo">
+        <div class="scale" style="background-color: #3498db; color: white; padding: 20px; border-radius: 5px; width: fit-content;">
+            Grow and Shrink
+        </div>
+    </div>
+
+    <!-- Color Change Animation -->
+    <h2>Color Change Animation</h2>
+    <div class="demo">
+        <div class="color-change">
+            Changing colors continuously!
+        </div>
+    </div>
+
+    <!-- Pulse Animation -->
+    <h2>Pulse Animation</h2>
+    <div class="demo">
+        <div class="pulse" style="background-color: #9b59b6; color: white; padding: 20px; border-radius: 5px; width: fit-content;">
+            Pulsing opacity
+        </div>
+    </div>
+
+    <!-- Glow Animation -->
+    <h2>Glow Animation</h2>
+    <div class="demo">
+        <div class="glow">
+            Glowing text
+        </div>
+    </div>
+
+    <!-- Shake Animation -->
+    <h2>Shake Animation</h2>
+    <div class="demo">
+        <div class="shake" style="background-color: #e67e22; color: white; padding: 20px; border-radius: 5px; width: fit-content;">
+            Shaking!
+        </div>
+    </div>
+
+    <!-- Button Hover Animation -->
+    <h2>Button Hover Animation</h2>
+    <div class="demo">
+        <button class="button-animate">Hover over me!</button>
+    </div>
+
+    <!-- Animation Delays -->
+    <h2>Animation Delays</h2>
+    <div class="demo">
+        <p>Each element has a delay before animation starts:</p>
+        <div class="fade-in delay-1" style="background-color: #667eea; color: white; padding: 15px; margin: 10px 0; border-radius: 5px;">
+            Delays 0.5s
+        </div>
+        <div class="fade-in delay-2" style="background-color: #764ba2; color: white; padding: 15px; margin: 10px 0; border-radius: 5px;">
+            Delays 1s
+        </div>
+        <div class="fade-in delay-3" style="background-color: #c0392b; color: white; padding: 15px; margin: 10px 0; border-radius: 5px;">
+            Delays 1.5s
+        </div>
+    </div>
+</body>
+</html>

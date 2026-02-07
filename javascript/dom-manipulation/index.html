@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Practice</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #764ba2;
+        }
+
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            background-color: yellow;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .list {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        .list-item {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #e8e8e8;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .list-item:hover {
+            background-color: #d0d0d0;
+        }
+
+        .list-item.selected {
+            background-color: #667eea;
+            color: white;
+        }
+
+        .output {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            min-height: 40px;
+        }
+
+        .highlight {
+            background-color: yellow;
+            padding: 5px;
+        }
+
+        .active {
+            color: green;
+            font-weight: bold;
+        }
+
+        form {
+            margin: 15px 0;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 DOM Manipulation & Events</h1>
+
+        <!-- Section 1: DOM Selectors -->
+        <h2>1. DOM Selectors</h2>
+        <div class="section">
+            <p id="myHeading">Hello from DOM</p>
+            <p class="item">Item 1</p>
+            <p class="item">Item 2</p>
+            <button onclick="demoSelectors()">Demo Selectors</button>
+        </div>
+
+        <!-- Section 2: Change Content -->
+        <h2>2. Change Content & Styles</h2>
+        <div class="section">
+            <p id="textContent">Original text</p>
+            <button onclick="changeText()">Change Text</button>
+            <button onclick="changeStyle()">Change Style</button>
+            <button onclick="resetText()">Reset</button>
+        </div>
+
+        <!-- Section 3: Class Manipulation -->
+        <h2>3. Add/Remove Classes</h2>
+        <div class="section">
+            <p id="classBox">Click buttons to change classes</p>
+            <button onclick="addClass()">Add Active Class</button>
+            <button onclick="removeClass()">Remove Active Class</button>
+            <button onclick="toggleClass()">Toggle Class</button>
+        </div>
+
+        <!-- Section 4: Click Events -->
+        <h2>4. Click Events</h2>
+        <div class="section">
+            <button id="clickBtn">Click Me</button>
+            <p id="clickOutput">Click count: 0</p>
+        </div>
+
+        <!-- Section 5: Mouse Events -->
+        <h2>5. Mouse Events</h2>
+        <div class="section">
+            <div class="box" id="mouseBox">Hover over me</div>
+            <p id="mouseOutput">Mouse event status</p>
+        </div>
+
+        <!-- Section 6: Input Events -->
+        <h2>6. Input Events</h2>
+        <div class="section">
+            <label>Type your name:</label>
+            <input type="text" id="nameInput" placeholder="Enter your name">
+            <p id="nameOutput">Your name will appear here</p>
+        </div>
+
+        <!-- Section 7: Form Events -->
+        <h2>7. Form Events</h2>
+        <div class="section">
+            <form id="demoForm">
+                <label>Email:</label>
+                <input type="email" id="email" required>
+                
+                <label>Message:</label>
+                <textarea id="message" rows="3"></textarea>
+                
+                <button type="submit">Submit Form</button>
+            </form>
+            <p id="formOutput">Form status will appear here</p>
+        </div>
+
+        <!-- Section 8: Keyboard Events -->
+        <h2>8. Keyboard Events</h2>
+        <div class="section">
+            <label>Press any key:</label>
+            <input type="text" id="keyInput" placeholder="Type here">
+            <p id="keyOutput">Key pressed: None</p>
+        </div>
+
+        <!-- Section 9: Toggle Visibility -->
+        <h2>9. Toggle Visibility</h2>
+        <div class="section">
+            <button id="toggleBtn">Show/Hide Content</button>
+            <div id="toggleContent" style="display: none; margin-top: 10px; padding: 10px; background-color: lightgreen; border-radius: 4px;">
+                This content is hidden. Click button to show/hide.
+            </div>
+        </div>
+
+        <!-- Section 10: List Events -->
+        <h2>10. List Item Events</h2>
+        <div class="section">
+            <ul class="list" id="itemList">
+                <li class="list-item">Item 1</li>
+                <li class="list-item">Item 2</li>
+                <li class="list-item">Item 3</li>
+                <li class="list-item">Item 4</li>
+            </ul>
+            <p style="font-size: 12px; color: #666;">Click items to select/deselect</p>
+        </div>
+
+        <div class="output" id="generalOutput">
+            👈 Interact with elements above. Check browser console (F12) for output.
+        </div>
+    </div>
+
+    <!-- Include JavaScript files -->
+    <script src="dom-selectors.js"></script>
+    <script src="event-handling.js"></script>
+
+    <!-- Inline JavaScript for HTML demos -->
+    <script>
+        // Demo 1: Selectors
+        function demoSelectors() {
+            let heading = document.getElementById("myHeading");
+            let items = document.querySelectorAll(".item");
+            alert("Found heading: " + heading.textContent + "\nFound items: " + items.length);
+            console.log("Selectors demo run");
+        }
+
+        // Demo 2: Change text
+        let clickCount = 0;
+        function changeText() {
+            let element = document.getElementById("textContent");
+            element.textContent = "Text has been changed!";
+            clickCount++;
+            document.getElementById("generalOutput").textContent = "Changed text " + clickCount + " times";
+        }
+
+        function changeStyle() {
+            let element = document.getElementById("textContent");
+            element.style.color = "blue";
+            element.style.fontSize = "20px";
+            element.style.backgroundColor = "yellow";
+        }
+
+        function resetText() {
+            let element = document.getElementById("textContent");
+            element.textContent = "Original text";
+            element.style.color = "black";
+            element.style.fontSize = "16px";
+            element.style.backgroundColor = "transparent";
+        }
+
+        // Demo 3: Class manipulation
+        function addClass() {
+            document.getElementById("classBox").classList.add("active");
+            console.log("Class added");
+        }
+
+        function removeClass() {
+            document.getElementById("classBox").classList.remove("active");
+            console.log("Class removed");
+        }
+
+        function toggleClass() {
+            document.getElementById("classBox").classList.toggle("active");
+            console.log("Class toggled");
+        }
+
+        // Demo 4: Click events
+        let clickCounter = 0;
+        document.getElementById("clickBtn").addEventListener("click", function() {
+            clickCounter++;
+            document.getElementById("clickOutput").textContent = "Click count: " + clickCounter;
+            console.log("Clicked " + clickCounter + " times");
+        });
+
+        // Demo 5: Mouse events
+        let mouseBox = document.getElementById("mouseBox");
+        mouseBox.addEventListener("mouseover", function() {
+            document.getElementById("mouseOutput").textContent = "Mouse is over the box";
+            this.style.backgroundColor = "lightcoral";
+        });
+
+        mouseBox.addEventListener("mouseout", function() {
+            document.getElementById("mouseOutput").textContent = "Mouse left the box";
+            this.style.backgroundColor = "lightblue";
+        });
+
+        // Demo 6: Input events
+        document.getElementById("nameInput").addEventListener("input", function() {
+            document.getElementById("nameOutput").textContent = "Your name: " + (this.value || "Not entered");
+        });
+
+        // Demo 7: Form events
+        document.getElementById("demoForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let email = document.getElementById("email").value;
+            document.getElementById("formOutput").textContent = "Form submitted! Email: " + email;
+            console.log("Form submitted");
+        });
+
+        // Demo 8: Keyboard events
+        document.getElementById("keyInput").addEventListener("keypress", function(event) {
+            document.getElementById("keyOutput").textContent = "Key pressed: " + event.key;
+        });
+
+        // Demo 9: Toggle visibility
+        document.getElementById("toggleBtn").addEventListener("click", function() {
+            let content = document.getElementById("toggleContent");
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                this.textContent = "Hide Content";
+            } else {
+                content.style.display = "none";
+                this.textContent = "Show Content";
+            }
+        });
+
+        // Demo 10: List item events
+        document.getElementById("itemList").addEventListener("click", function(event) {
+            if (event.target.classList.contains("list-item")) {
+                event.target.classList.toggle("selected");
+                console.log("Clicked: " + event.target.textContent);
+            }
+        });
+    </script>
+</body>
+</html>

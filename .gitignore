@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+npm-debug.log
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build files
+dist/
+build/
+.next/
+out/
+
+# Logs
+logs/
+*.log
+
+# Package manager
+package-lock.json
+yarn.lock
